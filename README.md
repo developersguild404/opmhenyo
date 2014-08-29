@@ -17,3 +17,6 @@ Post Highscore if online and loggedin
 Crossfade effect on songs while playing
 
 and many more :DD
+
+
+//by 404 Developers Guild
