@@ -30,7 +30,7 @@
 		<a data-role="button" id="btn-play" 
         data-icon="arrow-r" data-iconpos="right">Play</a>
 			<a data-role="button" id="btn-high"
-        data-icon="arrow-r" data-iconpos="right" >Leader Board</a>
+        data-icon="arrow-r" data-iconpos="right" >Leaderboard</a>
 			<a data-role="button" id="btn-login" 
         data-icon="arrow-r" data-iconpos="right">Login</a>
 			<a data-role="button" id="btn-logout"
@@ -39,7 +39,7 @@
         data-icon="arrow-r" data-iconpos="right">Register</a>
 			<a data-role="button" id="btn-play"  href="#about" 
         data-icon="arrow-r" data-iconpos="right" data-rel="dialog">About</a>
-				<audio autoplay ><source src="songs/instrumental.mp3" /></audio>
+				<audio autoplay="autoplay" loop="loop"><source src="songs/Hard_Rock_Instrumental.mp3" /></audio>
 		</div>
 
 
@@ -86,7 +86,7 @@
 			$("#btn-register").show();
 			$("#btn-logout").hide();
 		}else{
-			$("#txt-username").html("<b><center>Welcome "+localStorageUsername+"</center></b>");
+			$("#txt-username").html("<b><center>Welcome, "+localStorageUsername+"</center></b>");
 			$("#btn-login").hide();
 			$("#btn-logout").show();
 			$("#btn-register").hide();
