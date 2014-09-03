@@ -7,6 +7,7 @@
 	<script src="js/jquery-1.8.2.min.js"></script>
 	<script src="js/jquery.mobile-1.3.2.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="phonegap.js"></script>
 	<style>
 		.havebg {
 			background-image: url(assets/bg.gif);
@@ -92,7 +93,8 @@
 				//check answer 
 				var answer = $(this).val();
 				var correctAnswer = $("#correct").val();
-	
+				alert(answer);
+				alert(correctAnswer);
 				if(answer == correctAnswer){
 					addScore();
 					getQuestion();
@@ -1159,21 +1161,22 @@
 						$("#choice2").val(choice2);
 						$("#choice3").val(choice3);
 						$("#choice4").val(choice4);
+						$("#correct").val(correct);
 						
 						$('#choice1').prev('span').find('span.ui-btn-text').text(choice1);
 						$("#choice2").prev('span').find('span.ui-btn-text').text(choice2);
 						$("#choice3").prev('span').find('span.ui-btn-text').text(choice3);
 						$("#choice4").prev('span').find('span.ui-btn-text').text(choice4);
 						src = '/android_asset/www/' + mysong1;
+						
 						//crossfade assignment 
 						if(crossfade=="1"){
-						my_media1 = new Media(src, onSuccess, onError);
-						my_media1.play();
+						play1(src);
 						crossfade="0";
 						}
 						else{
-						my_media2 = new Media(src, onSuccess, onError);	
-						my_media2.play()
+						
+						play2(src);
 						crossfade="1";
 						
 						}
@@ -1189,12 +1192,26 @@
 			}
 
 		};
+		function play1(src){
+			my_media1 = new Media(src, onSuccess, onError);
+						my_media1.play();
+		
+		}
+		function play2(src){
+			my_media2 = new Media(src, onSuccess, onError);
+						my_media2.play();
+		
+		}
+		
 		
 		function gameStart(){
 			reset();
 			getQuestionsIndexes();
 			
 		};
+		
+		
+		
 		function addScore(){
 			m = 10;
 			var bonuspoints = parseInt($("#time").val()) + 5 ;  // points for every correct answer 5 for default and a point for each second left on the timer
